@@ -1,4 +1,5 @@
 import { Component } from "@angular/core";
+import * as _ from "lodash";
 
 class Item {
   purchase: string;
@@ -34,6 +35,6 @@ export class AppComponent {
   }
 
   removeDoneItems(): void {
-    this.items = this.items.filter(item => !item.done);
+    this.items = _.remove(this.items, (item) => !item.done);
   }
 }
